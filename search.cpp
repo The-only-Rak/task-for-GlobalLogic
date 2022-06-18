@@ -4,7 +4,7 @@
 void task::Finder::exist() noexcept
 {
     uint8_t tts = 1;
-    ///we ignore all errors which can be thow
+    ///we ignore all errors which can be throw
     std::error_code ec;
     while (true)
     {
