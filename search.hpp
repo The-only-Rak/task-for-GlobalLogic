@@ -27,7 +27,7 @@ namespace task
         /// stack which store all pathes where file can be
         std::stack<path> pathes;
         /// name of file
-        std::string_view name;
+        const std::string_view name;
         /**
          * @brief Function which search file.End when pathes is empty or file isFind is true
          *
@@ -40,7 +40,7 @@ namespace task
         void find() noexcept;
 
     public:
-        Finder(std::string_view name) noexcept;
+        Finder(const std::string_view name) noexcept;
         /**
          * @brief Get the Path file,if file is found return its path,else none.
          * if filePath is not empty,return filePath
@@ -54,4 +54,6 @@ namespace task
          */
         void ClearPath() noexcept;
     };
+    ///The second method of finding a file.More easy to realise.Speed of finding the not existing file 2x slover,but if file exist can be 15 % faster.
+    path find(const std::string_view a);
 }
